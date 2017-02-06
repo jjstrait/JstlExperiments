@@ -7,11 +7,10 @@ package edu.wctc.jjs.jstlexperiments.model;
 
 /**
  *
- * @author Joshua
+ * @author jstra
  */
-public class TableCalculator {
-    
-    public final double calculateAnswer(String firstNum,String secondNum) throws NumberFormatException{
+public class MultiTableCalculator {
+     public final double calculateAnswer(String firstNum,String secondNum) throws NumberFormatException{
        
         try {
             double first = Double.parseDouble( firstNum );
@@ -28,9 +27,4 @@ public class TableCalculator {
      public final double roundTwo(double number){
           return Math.round(number * 100.0) / 100.0;
      }
-    
-    
-    
-   
-    
 }

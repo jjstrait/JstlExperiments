@@ -5,6 +5,7 @@
  */
 package edu.wctc.jjs.jstlexperiments.controller;
 
+import edu.wctc.jjs.jstlexperiments.model.MultiTableCalculator;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,14 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import edu.wctc.jjs.jstlexperiments.model.TableCalculator;
 
 /**
  *
  * @author jstra
  */
-@WebServlet(name = "table", urlPatterns = {"/table"})
-public class TableController extends HttpServlet {
+@WebServlet(name = "MultiTableController", urlPatterns = {"/MultiTableController"})
+public class MultiTableController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,20 +31,14 @@ public class TableController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private final String FIRST = "first";
+     private final String FIRST = "first";
     private final String SECOND = "second";
     private final String ANSWER = "answer";
-    
-    
-    private final String RETURN_PAGE = "index.jsp";
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      
-        
         try {
-             TableCalculator calc = new TableCalculator();
+        MultiTableCalculator calc = new MultiTableCalculator();
            
             
             
@@ -56,16 +50,11 @@ public class TableController extends HttpServlet {
             request.setAttribute(ANSWER,answer);
             request.setAttribute(SECOND,second);
             request.setAttribute(FIRST,first);
-            
-            
-            
         }catch(Exception e){
-            request.setAttribute(ANSWER, e.getMessage());
+            request.setAttribute("hello", e.getMessage());
         }
-        
-        RequestDispatcher view = request.getRequestDispatcher(RETURN_PAGE);
+        RequestDispatcher view = request.getRequestDispatcher("index.jsp");
              view.forward(request, response);
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

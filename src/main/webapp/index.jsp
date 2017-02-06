@@ -42,7 +42,7 @@
             </tr>
         </c:forEach>
         </table>
-        <form id="form" name="form" method="POST" action="table">
+        <form id="form" name="form" method="POST" action="MultiTableController">
        <input  type="text" name="first" size="3" value="${first}">
        *<input  type="text" name="second" size="3" value="${second}">=${answer}
                   
