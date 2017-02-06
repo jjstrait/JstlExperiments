@@ -19,7 +19,7 @@
         <link href="table.css" rel = "stylesheet">
     </head>
     <body>
-        <h1>Tasks</h1>
+        <h1>Multiplication Table</h1>
         
          
         <table style="border-style: inset">
@@ -42,7 +42,7 @@
             </tr>
         </c:forEach>
         </table>
-        <form id="form1" name="form" method="POST" action="tableCalculator">
+        <form id="form" name="form" method="POST" action="table">
        <input  type="text" name="first" size="3" value="${first}">
        *<input  type="text" name="second" size="3" value="${second}">=${answer}
                   

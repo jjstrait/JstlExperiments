@@ -19,7 +19,7 @@ import edu.wctc.jjs.jstlexperiments.model.TableCalculator;
  *
  * @author jstra
  */
-@WebServlet(name = "tableCalculator", urlPatterns = {"/tableCalculator"})
+@WebServlet(name = "table", urlPatterns = {"/table"})
 public class TableController extends HttpServlet {
 
     /**
@@ -41,7 +41,7 @@ public class TableController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String errMsgLocation = ANSWER;
+      
         
         try {
              TableCalculator calc = new TableCalculator();
