@@ -27,11 +27,23 @@
             <tr>
             <c:forEach var="j" begin="1" end="12">
                <c:choose>
+                    <c:when test="${i==1 and j==first}">
+                        <td id="selected"> <c:out value="${i*j}"/></td>
+                    </c:when>
+                    <c:when test="${i==second and j==1}">
+                        <td id="selected"> <c:out value="${i*j}"/></td>
+                    </c:when>
+                    <c:when test="${i==second and j==first}">
+                        <td id="answer"> <c:out value="${i*j}"/></td>
+                    </c:when>
                     <c:when test="${i%2 != 0 and j%2==0}">
                         <td id="highlight"> <c:out value="${i*j}"/></td>
                     </c:when>
                     <c:when test="${i%2 == 0 and j%2!=0}">
                         <td id="highlight"> <c:out value="${i*j}"/></td>
+                    </c:when>
+                        <c:when test="${i==1 and j==first}">
+                        <td id="selected"> <c:out value="${i*j}"/></td>
                     </c:when>
                     <c:otherwise>
                         <td> <c:out value="${i*j}"/></td>
